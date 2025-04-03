@@ -58,8 +58,14 @@ WHERE movie_id=1;
 -- Score.objects.filter(user_id=1).count()
 SELECT COUNT(*) FROM movies_score
 WHERE user_id=1;
+-- BETWEEN : 나이 범위 지정하기
+-- User.objects.filter(age__range=[20,29])
+SELECT * FROM movies_user
+WHERE age BETWEEN 20 AND 29;
 
-
+-- Movie.objects.filter(year__in=[2000,2005,2010])
+SELECT * FROM movies_movie
+WHERE year IN (2000,2005,2010);
 
 
 -- 문자값 이용하기
@@ -68,7 +74,7 @@ WHERE user_id=1;
 SELECT * FROM movies_movie
 WHERE title LIKE '%the%';
 
--- Movie.objects.filter(title__contains ='the')
+-- Movie.objects.filter(title__startswith ='the')
 -- the로 시작하는 제목
 SELECT * FROM movies_movie
 WHERE title LIKE 'the%';
@@ -87,12 +93,3 @@ WHERE title LIKE '%g__d%';
 -- User.objects.values('country').distinct()
 SELECT COUNT(DISTINCT country) FROM movies_user;
 
-
--- BETWEEN : 나이 범위 지정하기
--- User.objects.filter(age__range=[20,29])
-SELECT * FROM movies_user
-WHERE age BETWEEN 20 AND 29;
-
--- Movie.objects.filter(year__in=[2000,2005,2010])
-SELECT * FROM movies_movie
-WHERE year IN (2000,2005,2010);
