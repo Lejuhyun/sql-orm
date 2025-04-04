@@ -10,6 +10,7 @@ class Movie(models.Model): # 영화에 대한 정보
     title = models.CharField(max_length=500)
     year = models.IntegerField()
     actors = models.ManyToManyField(Actor, related_name='movies') # 영화와 영화배우를 M:N으로 연결해준다(ManyToMany)
+    # category_set => categories
 
 class Category(models.Model): 
     name = models.CharField(max_length=500)
@@ -20,6 +21,7 @@ class User(models.Model): # 평점을 남긴 사람
     country = models.CharField(max_length=500)
     email = models.CharField(max_length=500)
     age = models.IntegerField()
+    # score_set
 
 class Score(models.Model): # 댓글
     content = models.CharField(max_length=500)

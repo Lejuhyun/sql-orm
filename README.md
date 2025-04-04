@@ -124,3 +124,15 @@ SELECT DISTINCT country FROM movies_user;
 ```shell
 User.objects.values('country').distinct()
 ```
+
+
+
+
+
+# 9. Join (두개의 테이블을 합쳐서 확장)
+- user테이블과 score테이블을 함께 봐야함
+
+
+
+# 다른 클래스에 있는 칼럼을 불러오려면 위에 입력한 것처럼 
+# '클래스명소문자__불러오려는 칼럼명' 을 입력해주면 된다.
